@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-import joblib  # pour sauvegarder le modèle
+import joblib  #sauvegarder le modèle
 
 # Charger les données prétraitées (tu peux aussi utiliser tes propres fonctions de prétraitement ici)
 def load_data(file_path):
