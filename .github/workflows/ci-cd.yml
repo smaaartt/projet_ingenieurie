@@ -1,4 +1,4 @@
-name: Pipeline CI CD
+name: CI Pipeline
 
 on:
   push:
@@ -49,13 +49,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r docs/requirements.txt
 
-      - name: Run unit tests for preprocessing
-        run: |
-          pytest tests/Test_Unit_DataPreprocessing.py --maxfail=1 --disable-warnings -q
+      - name: Install pytest
+        run: pip install pytest  # Assure-toi que pytest est installé
 
-      - name: Run unit tests for model training
-        run: |
-          pytest tests/Test_Unit_ModelTraining.py --maxfail=1 --disable-warnings -q
+      - name: Run tests
+        working-directory: ./tests  # Spécifie le répertoire des tests
+        run: pytest --maxfail=1 --disable-warnings -q  # Exécute pytest dans le répertoire des tests
 
   train_model:
     runs-on: ubuntu-latest
@@ -70,6 +69,7 @@ jobs:
           pip install -r docs/requirements.txt
 
       - name: Train the model
+        working-directory: .projet_ingenieurie/  # Répertoire racine ou là où est ton code d'entraînement
         run: python train_model.py
 
   deploy_model:
