@@ -15,7 +15,7 @@ def preprocess_data(df):
     return df
 
 # Charger et préparer les données
-df = load_data("C:\Users\ekavu\Angelikia Kavuansiko\projet-titanic\projet_ingenieurie\data\preprocessed_train.csv")  # Remplace ce chemin par celui où tes données prétraitées sont stockées
+df = load_data("C:/Users/ekavu/Angelikia Kavuansiko/projet-titanic/projet_ingenieurie/data/preprocessed_train.csv")  # Remplace ce chemin par celui où tes données prétraitées sont stockées
 df = preprocess_data(df)
 
 # Séparer les caractéristiques et les labels

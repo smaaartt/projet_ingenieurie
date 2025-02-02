@@ -1,6 +1,5 @@
 # main.py
 import subprocess
-import pandas
 
 def run_script(script_name):
     """Exécute un script Python en utilisant subprocess."""
