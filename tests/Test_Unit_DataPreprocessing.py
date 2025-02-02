@@ -2,7 +2,7 @@
 import pytest
 import pandas as pd
 from io import StringIO
-from data_preprocessing import load_data, preprocess_data, split_data
+from src.data_preprocessing import load_data, preprocess_data, split_data
 
 pytest.main(["C:/projet-titanic/tests/TestUnit.py"])
 
