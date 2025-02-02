@@ -1,9 +1,6 @@
 #Importation des bibliothéques 
 import unittest
 import pandas as pd
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 from sklearn.ensemble import RandomForestClassifier
 from src.model_training import load_data, split_data, train_model, save_model
 
