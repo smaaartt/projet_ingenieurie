@@ -1,0 +1,29 @@
+Contribution des Membres : 
+
+Membres du projet : 
+Ekta MISTRY - smaaartt
+Eva BERTRAND - E-VAA
+Angelikia KAVUANSIKO - lovecookie93
+
+Répartition des tâches : 
+
+1. Refactoriser le code : Ekta
+	- data_preprocessing.py
+	- model_training.py
+	- model_evaluation.py
+
+2. Tests unitaires : Eva
+	- TestUnit_data_preprocessing.py 
+	- TestUnit_model_training.py 
+
+3. Documentation : Toute l'équipe
+	- requirement
+	- Ajout des docstrings dans les scripts pour décrire l'objectif des fonctions et des modules
+	- Les instructions d'installation et d'utilisation
+	- Les contributions des membres de l'équipe 
+
+4. Fichier complémentaire : Angelikia
+	- 4eme fichier MAIN - à décider 
+	=> permet d'exécuter les scripts python l'un après l'autre
+
+5. Mise en place d'une Pipeline CI/CD : Angelikia
