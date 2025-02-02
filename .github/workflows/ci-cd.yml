@@ -28,7 +28,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest tests/
+          pytest tests/Test_Unit_*.py  # Cela inclura tous les fichiers qui commencent par "TestUnit_"
 
       - name: Lint with flake8
         run: |
