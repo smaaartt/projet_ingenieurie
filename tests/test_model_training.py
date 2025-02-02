@@ -1,6 +1,7 @@
 #Importation des bibliothéques 
 import unittest
 import pandas as pd
+import os
 from sklearn.ensemble import RandomForestClassifier
 from model_training import load_data, split_data, train_model, save_model
 
