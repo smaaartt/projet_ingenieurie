@@ -15,5 +15,8 @@ Ce projet consiste à refactoriser un notebook Kaggle sur la prédiction de surv
   3. Utiliser Git et Github pour la collaboration en équipe.
   4. Mettre en place et simuler un pipeline CI/CD pour automatiser les tests, le linting et le déploiement.
  
-
+Contributions
+Ekta MISTRY : Développement du prétraitement des données, implémentation de la formation du modèle.
+Eva BERTRAND : Ajout de tests unitaires, correction de bugs et amélioration de la documentation.
+Angelikia KAVUANSIKO : Mise en place du pipeline CI/CD, automatisation du déploiement et gestion du code.
 
