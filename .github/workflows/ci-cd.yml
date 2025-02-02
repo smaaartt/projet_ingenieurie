@@ -1,39 +1,41 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
       - main
+      - develop
   pull_request:
     branches:
-      - main
+      - develop
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.9'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
 
-    - name: Install dependencies
-      run: |
-        pip install -r docs/requirements.txt  # Assure-toi que pytest est dans requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Chemin corrigé vers le fichier requirements.txt
 
-    - name: Run tests
-      run: |
-        pytest tests/TestUnit_*.py  # Cette commande exécutera les tests dans le dossier "tests/"
+      - name: Run tests
+        run: |
+          pytest tests/TestUnit_*.py  # Cela inclura tous les fichiers qui commencent par "TestUnit_"
 
-    - name: Run Python script
-      run: |
-        python main.py
+      - name: Lint with flake8
+        run: |
+          pip install flake8
+          flake8 src/ --count --show-source --statistics
 
-    - name: Save Model
-      run: |
-        mkdir -p $GITHUB_WORKSPACE/models
-        cp models/random_forest.pkl $GITHUB_WORKSPACE/models/
+      - name: Format with black
+        run: |
+          pip install black
+          black src/ --check
